@@ -16,25 +16,47 @@ header {
 }
 
 nav {
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-nav input[id="search"] {
+.back {
   border: 1.5px solid #3C3C67;
   border-radius: 50px;
   background-color: transparent;
-  padding: 0.8rem 1rem 0.7rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #3C3C67;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.back:hover {
+  background-color: #292946;
+  transition: all 0.2s;
+}
+
+.search {
+  border: 1.5px solid #3C3C67;
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 0.8rem 1.4rem 0.7rem;
   width: 20rem;
   color: #83CFDF;
   font-size: 1rem;
   font-family: inherit;
-  outline: none;
 }
 
-nav input[id="search"]::placeholder {
+.search::placeholder {
   color: #3C3C67;
+}
+
+.search:focus {
+  outline: none;
+  background-color: #292946;
+  transition: all 0.2s;
 }
 
 main {
@@ -45,12 +67,14 @@ main {
 }
 
 .movie {
+  position: relative;
   width: 300px;
   border-radius: 3px;
   background-color: #292946;
   margin: 1rem;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .movie img {
@@ -84,4 +108,34 @@ main {
 
 .movie-info span.red {
   color: rgb(189, 42, 42);
+}
+
+.overview {
+  background-color: rgb(0, 0, 0);
+  padding: 2rem;
+  color: white;
+  font-family: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.overview h3 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.overview p {
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+.movie:hover .overview {
+  opacity: 0.8;
+  overflow: scroll;
 }
