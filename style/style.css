@@ -1,2 +1,53 @@
-/* css */
 @import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+body {
+  background-color: #1D1F32;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 300px;
+  border-radius: 3px;
+  background-color: #292946;
+  margin: 1rem;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: #F5F5F5;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.movie-info span {
+  border-radius: 3px;
+  background-color: #212138;
+  padding: 0.25rem 0.5rem;
+}
+
+.movie-info span.green {
+  color: rgb(39, 189, 39)
+}
+
+.movie-info span.orange {
+  color: orange;
+}
+
+.movie-info span.red {
+  color: rgb(189, 42, 42);
+}
