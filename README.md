@@ -1,20 +1,33 @@
-# 📝 Movie app
+# 📝 Movie App
+
+# 🚧 Work in progress 🚧
 
 ![Movie App]()
 
-JavaScript로 구현한 영화평점 웹 앱입니다.
+Vanilla JavaScript와 영화 API를 이용하여 구현한 영화 검색 웹 앱입니다.
 
 <br/>
 
 ## 💄 UI Design
 
-- [UI Design Daily](https://uidesigndaily.com/posts/photoshop-movie-app-mobile-day-193) 사이트의 템플릿을 참고하여 작업
+![PSD](https://user-images.githubusercontent.com/51189962/102138124-37b0fc00-3e9f-11eb-8d44-e7ec9619e6ff.png)
+
+- [UI Design Daily](https://uidesigndaily.com/posts/photoshop-movie-app-mobile-day-193)의 템플릿을 참고하여 작업
 - [Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 - [Goole Font](https://fonts.google.com/)
 
 <br/>
 
 ## 🧑🏻‍💻 Feature
+
+- [The Movie Database API](https://www.themoviedb.org/?language=ko)
+- 영화 API 데이터 가져오기
+  - async-await, fetch를 이용하여 비동기 처리(Axios 🚫)
+- 영화 Image url 가져오기
+- 영화 포스터에 mouse hover시 overview 기능 구현
+- 영화 검색 API를 이용하여 원하는 데이터 검색 기능 구현
+- 검색 페이지에서 홈으로 되돌아가는 버튼 구현(Back 버튼)
+- 검색 페이지에서 홈으로 이동할 때 데이터 재요청 없이 화면에 렌더링하도록 구현
 
 <br/>
 
@@ -28,8 +41,6 @@ JavaScript로 구현한 영화평점 웹 앱입니다.
 
 ## ↩️ Commit History
 
-[커밋 히스토리]()
+[커밋 히스토리](https://github.com/keemtj/project-movieApp/commits?author=keemtj)
 
-<br/>
-<br/>
 <br/>
