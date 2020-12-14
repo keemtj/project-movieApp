@@ -10,10 +10,16 @@ const IMAGE_URL = "https://image.tmdb.org/t/p/w780";
 
 const SEARCH_API = `https://api.themoviedb.org/3/search/${show}?api_key=${API_KEY}&query=`;
 
+let datas = [];
+let searchStack = [];
+
 // DOM
 const main = document.querySelector("main");
+const nav = document.querySelector("nav");
 const form = document.querySelector("form");
 const search = document.querySelector(".search");
+const back = document.querySelector(".back");
+const tempEl = document.createElement("div");
 
 const getClassByRate = (vote) => {
   if (vote >= 8) {
@@ -26,6 +32,15 @@ const getClassByRate = (vote) => {
 };
 
 const showMovies = (movies) => {
+  if (!datas.length) {
+    datas = [...movies];
+    back.style.display = "none";
+    nav.prepend(tempEl);
+  } else {
+    tempEl.remove();
+    back.style.display = "block";
+  }
+
   main.innerHTML = "";
   movies.forEach((movie) => {
     /* eslint-disable camelcase */
@@ -54,15 +69,37 @@ const getMovies = async (url) => {
   showMovies(results);
 };
 
-window.addEventListener("load", () => getMovies(NETFLIX_ORIGINAL_URL));
-
-form.addEventListener("submit", (e) => {
+const getSearchData = (e) => {
   e.preventDefault();
-  const searchTerm = search.value;
-  console.log(searchTerm);
-
-  if (searchTerm) {
-    getMovies(SEARCH_API + searchTerm);
+  const searchValue = search.value;
+  if (searchValue) {
+    searchStack.push(searchValue);
+    getMovies(SEARCH_API + searchValue);
     search.value = "";
   }
-});
+  console.log(searchStack);
+};
+
+const goBack = () => {
+  console.log("뒤로가기!");
+  showMovies(datas);
+  back.style.display = "none";
+  nav.prepend(tempEl);
+};
+
+window.addEventListener("load", () => getMovies(NETFLIX_ORIGINAL_URL));
+form.addEventListener("submit", getSearchData);
+back.addEventListener("click", goBack);
+
+/**
+ * back 버튼 클릭시 홈으로 이동
+ * 홈으로 이동하면 back 버튼 숨김
+ * -> 더 좋은 방법이 있는지 생각해보기
+ *
+ * movies를 datas변수 또는 localStorage에 저장
+ *
+ * 마지막 줄 정렬 해결하기(원인: space-between)
+ * (option)두 버전으로 구현해보기
+ * 1. pagenation
+ * 2. infinite
+ */
