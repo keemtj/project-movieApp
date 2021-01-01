@@ -2,7 +2,7 @@
 
 # 🚧 Work in progress 🚧
 
-![Movie App]()
+<img width="1678" alt="스크린샷 2021-01-01 23 49 27" src="https://user-images.githubusercontent.com/51189962/103440804-08b2cc80-4c8c-11eb-93e2-cd53c2343702.png">
 
 Vanilla JavaScript와 영화 API를 이용하여 구현한 영화 검색 웹 앱입니다.
 
